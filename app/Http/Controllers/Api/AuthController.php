@@ -13,7 +13,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validatedData = $request->validate([
-            // 'name' => 'required|max:55',
+            'name' => 'required|max:55',
             'email' => 'email|required|unique:users',
             // 'password' => 'required|confirmed'
             'password' => 'required'
@@ -39,7 +39,10 @@ class AuthController extends Controller
             return response(['message' => 'User does not exist, please check your details'], 400);
         }
 
-        $accessToken = auth()->user()->createToken('authToken')->accessToken;
+        // $accessToken = auth()->user()->createToken('authToken')->accessToken;
+        $accessToken = auth()->user()->createToken('authToken')->plainTextToken;
+        // $user = User::where('email', $request->email)->first();
+        // $accessToken = $user->createToken('auth-token')->plainTextToken;
 
         return response(['user' => auth()->user(), 'access_token' => $accessToken]);
     }
