@@ -12,8 +12,7 @@
 Laravel Get Started Project is a basic crud app built with laravel 11. In this app a basic product crud created. 
 <br>Features include:
 
-- Laravel ui package (```composer require laravel/ui:^2.4```)
-- Laravel default auth (```php artisan ui vue --auth```)
+- Laravel breeze package (```composer require laravel/breeze```)
 - NHRROB Crud Generator package to generate crud using command
   <br>(https://github.com/nhrrob/crudgenerator - ```composer require nhrrob/crudgenerator```)  
 - Spatie Laravel Permission
@@ -39,7 +38,7 @@ This app created to help developers to get started with their laravel applicatio
 
 ## License
 
-The Laravel 11 Get Started Project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel Get Started Project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 
 ## Contact
