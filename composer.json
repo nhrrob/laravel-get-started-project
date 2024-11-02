@@ -9,7 +9,7 @@
         "laravel/framework": "^11.9",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
-        "nhrrob/crudgenerator": "^2.2"
+        "nhrrob/crudgenerator": "^2.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
