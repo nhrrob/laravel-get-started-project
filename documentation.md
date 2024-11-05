@@ -16,3 +16,7 @@ php artisan migrate:fresh --seed
 - siteurl/admin/products
 - It uses laravel/breeze
 - For api, sanctum is used instead of passport
+- after creating crud: update migration and then migrate
+```
+$table->string('title');
+```
