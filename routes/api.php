@@ -21,8 +21,3 @@ Route::post('v1/login', '\App\Http\Controllers\Api\V1\AuthController@login');
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('v1/logout', '\App\Http\Controllers\Api\V1\AuthController@logout');
 });
-
-// Route::group([ 'namespace'=> '\App\Http\Controllers\Api\V1\Admin', 'prefix' => 'v1',  'as'=>'api.', 'middleware' => ['auth:sanctum']], function () { 
-//   Route::get('/products/search/{title}', 'ProductController@search')->name('products.search'); 
-//   Route::apiResource('products', 'ProductController'); 
-// });
