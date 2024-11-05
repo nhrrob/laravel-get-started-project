@@ -31,3 +31,13 @@ Route::group([ 'namespace'=> '\App\Http\Controllers\Api\V1\Admin', 'prefix' => '
   Route::get('/products/search/{title}', 'ProductController@search')->name('products.search'); 
   Route::apiResource('products', 'ProductController'); 
 });
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Api\V1', 'prefix' => 'v1/',  'as'=>'v1.', 'middleware' => ['auth:sanctum']], function () { 
+  Route::get('/projects/search/{title}', 'ProjectController@search')->name('projects.search'); 
+  Route::apiResource('projects', 'ProjectController'); 
+});
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Api\V1\Admin', 'prefix' => 'v1/admin',  'as'=>'v1.admin.', 'middleware' => ['auth:sanctum']], function () { 
+  Route::get('/projects/search/{title}', 'ProjectController@search')->name('projects.search'); 
+  Route::apiResource('projects', 'ProjectController'); 
+});
