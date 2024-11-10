@@ -41,3 +41,8 @@ Route::group([ 'namespace'=> '\App\Http\Controllers\Api\V1\Admin', 'prefix' => '
   Route::get('/projects/search/{title}', 'ProjectController@search')->name('projects.search'); 
   Route::apiResource('projects', 'ProjectController'); 
 });
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Api\V1', 'prefix' => 'v1/',  'as'=>'v1.', 'middleware' => ['auth:sanctum']], function () { 
+  Route::get('/hellos/search/{title}', 'HelloController@search')->name('hellos.search'); 
+  Route::apiResource('hellos', 'HelloController'); 
+});
