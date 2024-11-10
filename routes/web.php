@@ -28,15 +28,3 @@ Route::group([ 'namespace'=> '\App\Http\Controllers', 'prefix' => '',  'as'=>'',
 Route::group([ 'namespace'=> '\App\Http\Controllers\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => 'auth' ], function () { 
   Route::resource('products', 'ProductController'); 
 });
-
-Route::group([ 'namespace'=> '\App\Http\Controllers', 'prefix' => '',  'as'=>'', 'middleware' => 'auth' ], function () { 
-  Route::resource('projects', 'ProjectController'); 
-});
-
-Route::group([ 'namespace'=> '\App\Http\Controllers\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => 'auth' ], function () { 
-  Route::resource('projects', 'ProjectController'); 
-});
-
-Route::group([ 'namespace'=> '\App\Http\Controllers', 'prefix' => '',  'as'=>'', 'middleware' => 'auth' ], function () { 
-  Route::resource('hellos', 'HelloController'); 
-});
