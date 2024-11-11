@@ -20,3 +20,11 @@ php artisan migrate:fresh --seed
 ```
 $table->string('title');
 ```
+
+## Remove default/existing product crud
+- Run below commands
+```
+- php artisan crud:generator:delete
+- php artisan crud:generator:delete --admin
+```
+- Add `Product` as Model title
