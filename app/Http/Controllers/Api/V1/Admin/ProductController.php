@@ -10,6 +10,11 @@ use App\Http\Resources\V1\ProductResource;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct('product', 1);
+    }
+
     /**
      * Display a listing of the resource.
      *
