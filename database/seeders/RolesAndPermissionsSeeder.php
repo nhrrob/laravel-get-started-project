@@ -73,7 +73,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $permissions = [];
         $permissions[] = $this->permissionItem('dashboard',1);
         
-        $permissionGroups = ['user', 'admin', 'role', 'permission', 'product'];
+        $permissionGroups = ['user', 'admin', 'role', 'permission', 'product', 'project'];
 
         foreach($permissionGroups as $permissionGroup){
             $permissions[] = $this->permissionItem($permissionGroup);

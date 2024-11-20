@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Traits\GlobalTrait;
+
 abstract class Controller extends \Illuminate\Routing\Controller
 {
+    use GlobalTrait;
+    
     public function __construct($permissionGroup = '', $isApi=0)
     {
         if($permissionGroup != ''){

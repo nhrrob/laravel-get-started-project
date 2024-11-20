@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Product') }}
+            {{ __('Permission') }}
         </h2>
     </x-slot>
 
@@ -16,13 +16,16 @@
                     </div>
                     @endif
 
-                    <p><a class="inline-flex items-center my-4 px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" href='{{ route("admin.products.create") }}'><i class="fa fa-plus"></i> Create Product</a></p>
+                    <p><a class="inline-flex items-center my-4 px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" href='{{ route("admin.permissions.create") }}'><i class="fa fa-plus"></i> Create Permission</a></p>
 
                     <table class="table-auto">
                         <thead>
                             <tr>
                                 <th>
-                                    Title
+                                    Name
+                                </th>
+                                <th>
+                                    Group Name
                                 </th>
                                 <th>
                                     Created
@@ -31,20 +34,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($products as $product)
+                            @forelse($permissions as $permission)
                             <tr>
                                 <td>
-                                    {{ $product->title ?? 'N/A' }}
+                                    {{ $permission->name ?? 'N/A' }}
+                                </td>
+                                
+                                <td>
+                                    {{ $permission->group_name ?? 'N/A' }}
                                 </td>
 
                                 <td>
-                                    {{ optional($product->created_at)->diffForHumans() }}
+                                    {{ optional($permission->created_at)->diffForHumans() }}
                                 </td>
 
                                 <td>
-                                    <a class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" href='{{ route("admin.products.edit", $product->id) }}'><i class="fa fa-pencil"></i> Edit</a>
+                                    <a class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" href='{{ route("admin.permissions.edit", $permission->id) }}'><i class="fa fa-pencil"></i> Edit</a>
 
-                                    <form method="POST" action="{{ route('admin.products.destroy', $product->id) }}">
+                                    <form method="POST" action="{{ route('admin.permissions.destroy', $permission->id) }}">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
 
@@ -64,10 +71,10 @@
                         </tbody>
                     </table>
                     <!-- Page Content: Ends  -->
-
+                    
                     <!-- Pagination  -->
                     <div class="d-flex justify-content-center">
-                        {{ $products->links() }}
+                        {{ $permissions->links() }}
                     </div>
                 </div>
 

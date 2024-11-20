@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Product') }}
+            {{ __('Role') }}
         </h2>
     </x-slot>
 
@@ -16,13 +16,16 @@
                     </div>
                     @endif
 
-                    <p><a class="inline-flex items-center my-4 px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" href='{{ route("admin.products.create") }}'><i class="fa fa-plus"></i> Create Product</a></p>
+                    <p><a class="inline-flex items-center my-4 px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" href='{{ route("admin.roles.create") }}'><i class="fa fa-plus"></i> Create Role</a></p>
 
                     <table class="table-auto">
                         <thead>
                             <tr>
                                 <th>
-                                    Title
+                                    Name
+                                </th>
+                                <th>
+                                    Permissions
                                 </th>
                                 <th>
                                     Created
@@ -31,20 +34,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($products as $product)
+                            @forelse($roles as $role)
                             <tr>
                                 <td>
-                                    {{ $product->title ?? 'N/A' }}
+                                    {{ $role->name ?? 'N/A' }}
                                 </td>
 
                                 <td>
-                                    {{ optional($product->created_at)->diffForHumans() }}
+                                    @foreach($role->permissions as $perm)
+                                    <span class="badge badge-info mb-1 p-1 text-white" style="font-size: 12px;">{{$perm->name}}</span>
+                                    @endforeach
                                 </td>
 
                                 <td>
-                                    <a class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" href='{{ route("admin.products.edit", $product->id) }}'><i class="fa fa-pencil"></i> Edit</a>
+                                    {{ optional($role->created_at)->diffForHumans() }}
+                                </td>
 
-                                    <form method="POST" action="{{ route('admin.products.destroy', $product->id) }}">
+                                <td>
+                                    <a class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" href='{{ route("admin.roles.edit", $role->id) }}'><i class="fa fa-pencil"></i> Edit</a>
+
+                                    <form method="POST" action="{{ route('admin.roles.destroy', $role->id) }}">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
 
@@ -67,7 +76,7 @@
 
                     <!-- Pagination  -->
                     <div class="d-flex justify-content-center">
-                        {{ $products->links() }}
+                        {{ $roles->links() }}
                     </div>
                 </div>
 

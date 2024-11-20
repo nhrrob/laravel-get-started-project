@@ -37,6 +37,18 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
+                        
+                        <x-dropdown-link :href="route('admin.permissions.index')">
+                            {{ __('Permissions') }}
+                        </x-dropdown-link>
+                        
+                        <x-dropdown-link :href="route('admin.roles.index')">
+                            {{ __('Roles') }}
+                        </x-dropdown-link>
+                        
+                        <x-dropdown-link :href="route('admin.users.index')">
+                            {{ __('Users') }}
+                        </x-dropdown-link>
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">

@@ -64,6 +64,11 @@
                         </tbody>
                     </table>
                     <!-- Page Content: Ends  -->
+
+                    <!-- Pagination  -->
+                    <div class="d-flex justify-content-center">
+                        {{ ${{modelCamelPlural}}->links() }}
+                    </div>
                 </div>
 
 
