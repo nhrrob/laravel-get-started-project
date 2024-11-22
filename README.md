@@ -37,9 +37,7 @@ This app created to help developers to get started with their laravel applicatio
 
 ## Project Setup
 
-- Download the project. Locally create a project folder. Paste downloaded files (inside laravel-get-started-project-master).
-- Create new GitHub blank repo. Follow instructions and your project to the new GitHub repo.
-- Update composer
+- Follow documentation.md
 ```
 composer update
 ```
