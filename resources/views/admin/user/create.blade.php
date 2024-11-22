@@ -40,7 +40,7 @@
                                     <!-- default: user -->
                                     <option value="3">Role</option>
                                     @foreach($roles as $singleRole)
-                                    <option value="{{$singleRole->id}}" {{ $singleRole->id == old('role') ? 'selected' : '' }} >{{ $singleRole->name }}</option>
+                                    <option value="{{$singleRole->name}}" {{ $singleRole->name == old('role') ? 'selected' : '' }} >{{ $singleRole->name }}</option>
                                     @endforeach
                                 </select>
                                 @error('role')

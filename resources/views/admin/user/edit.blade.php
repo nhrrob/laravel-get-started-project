@@ -22,8 +22,40 @@
                             @method('PUT')
 
                             <div class="form-group">
-                                <input class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" type="text" name="name" placeholder="Name" value="{{$user->name}}">
+                                <input class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full mb-2" type="text" name="name" placeholder="Name" value="{{$user->name}}">
                                 @error('name')
+                                <label class="text-danger">{{ $message }}</label>
+                                @enderror
+                            </div>
+                            
+                            <div class="form-group">
+                                <input class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full mb-2" type="email" name="email" placeholder="Email" value="{{$user->email}}">
+                                @error('email')
+                                <label class="text-danger">{{ $message }}</label>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <select class="form-control mb-2" name="role">
+                                    <!-- default: user -->
+                                    <option value="3">Role</option>
+                                    @foreach($roles as $singleRole)
+                                    <option value="{{$singleRole->name}}" {{ $singleRole->name == optional(optional($user->roles)[0])->name ? 'selected' : '' }} >{{ $singleRole->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('role')
+                                <label id="-error" class="error" for="">{{ $message }}</label>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <input class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full mb-2" type="password" name="password" placeholder="New Password" value="">
+                                
+                                <div class="p-3 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 mb-2" role="alert">
+                                    Keep blank if you don't want to change
+                                </div>
+
+                                @error('password')
                                 <label class="text-danger">{{ $message }}</label>
                                 @enderror
                             </div>
