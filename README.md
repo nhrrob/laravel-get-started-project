@@ -35,6 +35,22 @@ This app created to help developers to get started with their laravel applicatio
 - Demo User (database/seeders/DatabaseSeeder.php): 
 <br> ```admin@admin.com/password```
 
+## Project Setup
+
+- Download the project. Locally create a project folder. Paste downloaded files (inside laravel-get-started-project-master).
+- Create new GitHub blank repo. Follow instructions and your project to the new GitHub repo.
+- Update composer
+```
+composer update
+```
+- Update .env
+```
+cp .env.example .env
+```
+
+
+- 
+
 
 ## License
 
