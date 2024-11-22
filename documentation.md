@@ -11,7 +11,7 @@ php artisan key:generate
 php artisan migrate:fresh --seed
 ```
 - composer update
-- npm install
+- vite install
 - npm run dev
 - siteurl/admin/products
 - It uses laravel/breeze
