@@ -38,16 +38,6 @@ This app created to help developers to get started with their laravel applicatio
 ## Project Setup
 
 - Follow documentation.md
-```
-composer update
-```
-- Update .env
-```
-cp .env.example .env
-```
-
-
-- 
 
 
 ## License
