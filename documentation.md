@@ -1,6 +1,9 @@
 # Project Setup
-- [optional] If you face issues with vite feel free to download the version this drive link (as size is 150MB; couldn't push to another branch)
+Process 1:
+- If you face issues with vite feel free to download the version this drive link (as size is 150MB; couldn't push to another branch)
 Drive Link: https://drive.google.com/file/d/1miyXjPpCnP8C4cSF217mu13lP_wR6_q1/view?usp=share_link 
+
+Process 2 (recommended; You face issue related to vite - laravel 11):
 - copy .env.example to .env
 - add database details
 - generate app key 
