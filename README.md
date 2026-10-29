@@ -9,7 +9,7 @@
 
 ## Laravel Get Started Project
 
-Laravel Get Started Project is a basic crud app built with laravel 11. In this app a basic product crud created. 
+Laravel Get Started Project is a basic crud app built with laravel 13. In this app a basic product crud created. 
 <br>Features include:
 
 - Laravel breeze package (```composer require laravel/breeze```)
